@@ -1,0 +1,3 @@
+[deps]
+BPMNExecutor = "7dd6ad4b-b073-4a13-8cbc-d42ab398a6c6"
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"

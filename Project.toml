@@ -1,0 +1,13 @@
+name = "BPMNExecutor"
+uuid = "7dd6ad4b-b073-4a13-8cbc-d42ab398a6c6"
+authors = ["Piet VAN DER PAELT <piet.van.der.paelt@vub.be>"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
