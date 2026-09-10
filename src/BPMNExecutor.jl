@@ -4,6 +4,6 @@ module BPMNExecutor
     export retrieveTopProcess, exploreFlow, showNodeElements, doCode
 
     include("datastructures.jl")
-    include("bpmnExplorer.jl")
+    include("parser.jl")
 
 end

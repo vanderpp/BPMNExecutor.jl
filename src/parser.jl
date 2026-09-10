@@ -39,7 +39,7 @@ function exploreFlow(Node)
 
         #if currentNodeType == "bpmn:incoming" || currentNodeType == "bpmn:outgoing"
         if currentNodeType ∉ keys(nodetypes)
-            println("Skipping node type: $currentNodeType no instantiator function available")
+            @info "Skipping node type: $currentNodeType no instantiator function available"
             continue # Skip incoming and outgoing nodes, they are handled in the parent node
         end
 
@@ -48,7 +48,7 @@ function exploreFlow(Node)
         id = attributes(child)["id"] # id exists always for the 5 types defined above
         nodeStruct = nodeType(id)
 
-        #println(nodeStruct isa Union{subProcess, task, startEvent, endEvent, sequenceFlow})
+        #@info "Processing node: $id of type $currentNodeType"
     
         if nodeType == sequenceFlow
             nodeStruct.sourceRef = attributes(child)["sourceRef"]
@@ -69,7 +69,7 @@ function exploreFlow(Node)
         elseif nodeType == endEvent
             registerInFlows(nodeStruct, child)
         else
-            println("Unknown node type: $currentNodeType")
+            @info "Unknown node type: $currentNodeType"
         end
         
         push!(nodeElements, nodeStruct) 
