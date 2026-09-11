@@ -4,8 +4,15 @@ function showNodeElements(nodeElements)
     [begin println(typeof(el), " ", get_id(el)); end for el in nodeElements]
 end
 
-function doCode()
+function parseBPMN()
     "./src/diagram.bpmn" |> retrieveTopProcess |> exploreFlow #|> showNodeElements
 end
 
-doCode()
+parsed = parseBPMN()
+startEvent = findStartEvent(parsed)
+
+
+#someTask = parsed[1].subnodes[2]
+#print(taskGenerator(someTask))
+
+#print(resumableGenerator("subProcess1"))
